@@ -41598,9 +41598,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['operations', 'listType'],
+    props: ['operations', 'listType', 'title'],
     methods: {
         display: function display(operation) {
             return operation.type === this.listType || this.listType === "all";
@@ -41901,7 +41906,13 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('p', [_vm._v("Total = " + _vm._s(_vm.total))]), _vm._v(" "), _c('table', {
+  return _c('div', {
+    staticClass: "card"
+  }, [_c('div', {
+    staticClass: "card-header text-center"
+  }, [_c('h4', [_vm._v(_vm._s(_vm.title))])]), _vm._v(" "), _c('div', {
+    staticClass: "card-block"
+  }, [_c('p', [_vm._v("Total = " + _vm._s(_vm.total))]), _vm._v(" "), _c('table', {
     staticClass: "table table-striped",
     on: {
       "click": _vm.total
@@ -41913,7 +41924,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "operation": operation
       }
     }) : _vm._e()
-  }))])])
+  }))])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Amount")]), _vm._v(" "), _c('th', [_vm._v("Date")]), _vm._v(" "), _c('th', [_vm._v("Category")])])])
 }]}

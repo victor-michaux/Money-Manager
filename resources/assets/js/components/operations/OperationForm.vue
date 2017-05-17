@@ -35,9 +35,12 @@
                 </div>
                 <div class="form-group row">
                     <label for="category" class="col-4 col-sm-4 col-lg-3 col-xl-2 col-form-label">Category</label>
-                    <select class="form-control" id="category" v-model="category">
-                        <option v-for="category in categories" v-bind:value="category.id" class="form-control col">{{ category.name }}</option>
-                    </select>
+                    <div class="col">
+                        <select class="form-control" id="category" v-model="category">
+                            <option v-for="category in categories" v-bind:value="category.id" class="form-control col">{{ category.name }}</option>
+                        </select>
+                    </div>
+
                 </div>
                 <div class="text-center"><div @click="storeOperation" id="submit-button" class="btn btn-block btn-lg btn-primary">Add Operation</div></div>
             </div>

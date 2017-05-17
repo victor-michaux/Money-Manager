@@ -41442,6 +41442,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -41692,7 +41695,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "for": "category"
     }
-  }, [_vm._v("Category")]), _vm._v(" "), _c('select', {
+  }, [_vm._v("Category")]), _vm._v(" "), _c('div', {
+    staticClass: "col"
+  }, [_c('select', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -41721,7 +41726,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": category.id
       }
     }, [_vm._v(_vm._s(category.name))])
-  }))]), _vm._v(" "), _c('div', {
+  }))])]), _vm._v(" "), _c('div', {
     staticClass: "text-center"
   }, [_c('div', {
     staticClass: "btn btn-block btn-lg btn-primary",

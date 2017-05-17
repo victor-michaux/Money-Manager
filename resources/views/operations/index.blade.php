@@ -25,14 +25,7 @@
                 <tab name="all" :selected="true">
                     <div class="row">
                         <div class="col">
-                            <div class="card">
-                                <div class="card-header text-center">
-                                    <h4>My operations</h4>
-                                </div>
-                                <div class="card-block">
-                                    <operations-list list-type="all" v-bind:operations="operations"></operations-list>
-                                </div>
-                            </div>
+                            <operations-list title="My Operation" list-type="all" v-bind:operations="operations"></operations-list>
                         </div>
                     </div>
                 </tab>
@@ -40,25 +33,11 @@
                 <tab name="separated">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-header text-center">
-                                    <h4>Expenses</h4>
-                                </div>
-                                <div class="card-block">
-                                    <operations-list list-type="expense" v-bind:operations="operations"></operations-list>
-                                </div>
-                            </div>
+                            <operations-list title="Expenses" list-type="expense" v-bind:operations="operations"></operations-list>
                         </div>
 
                         <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-header text-center">
-                                    <h4>Incomes</h4>
-                                </div>
-                                <div class="card-block">
-                                    <operations-list list-type="income" v-bind:operations="operations"></operations-list>
-                                </div>
-                            </div>
+                            <operations-list title="Incomes" list-type="income" v-bind:operations="operations"></operations-list>
                         </div>
                     </div>
 
