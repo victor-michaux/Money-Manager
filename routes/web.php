@@ -12,5 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.home');
+})->middleware('guest');
+
+Route::get('/features', function () {
+    return view('features');
+})->middleware('guest');
+
+Route::group(['middleware' => 'auth', 'namespace' => 'Web', 'prefix'  =>  'operations'], function() {
+   Route::get('/', 'OperationController@dashboard')->name('dashboard');
+   Route::get('/create', 'OperationController@create')->name('create-operation');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

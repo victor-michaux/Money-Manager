@@ -1,0 +1,55 @@
+#presentation-text {
+    padding-top: 5%;
+    color: #fff;
+}
+
+#auth-button {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0   -2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#auth-button .btn {
+    padding: 10px 40px;
+    box-shadow: 0   2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#auth-button .btn-primary {
+    background-color: #0084ff;
+}
+
+#auth-button .btn-primary:hover {
+    background-color: #0084ff;
+    border-color: #0084ff;
+    box-shadow: 0   8px 16px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#auth-button p {
+    margin-bottom: 0;
+}
+
+#register-button {
+    margin-right: 5%;
+}
+
+#login-button {
+    margin-left: 5%;
+}
+
+@media only screen and (max-width: 320px) {
+    #auth-button .btn {
+        padding: 0.5em 1.5em;
+    }
+
+    #register-button {
+        margin-right: 0;
+    }
+
+    #login-button {
+        margin-left: 0;
+    }
+}

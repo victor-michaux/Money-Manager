@@ -1,0 +1,21 @@
+#sign-in-redirection {
+    font-size: 0.9em;
+    margin-top: 1em;
+    margin-bottom: 0px;
+}
+
+#registration-form {
+    margin-top: 100px;
+}
+
+#registration-button {
+    background-color: #0084ff;
+    box-shadow: 0   2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#registration-button:hover {
+    background-color: #0084ff;
+    border-color: #0084ff;
+    box-shadow: 0   8px 16px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+
+}

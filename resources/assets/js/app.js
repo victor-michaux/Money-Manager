@@ -17,6 +17,23 @@ window.Vue = require('vue');
 
 Vue.component('example', require('./components/Example.vue'));
 
+Vue.component('tab', require('./components/general/Tab.vue'));
+Vue.component('tabs', require('./components/general/Tabs.vue'));
+
+Vue.component('operation-item', require('./components/operations/OperationItem.vue'));
+Vue.component('operations-list', require('./components/operations/OperationList.vue'));
+
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        operations: [],
+    },
+    mounted: function () {
+        axios.get('/api/operations')
+            .then(response => {
+                this.operations = response.data.data;
+                console.log(this.operations);
+            });
+    }
+
 });
