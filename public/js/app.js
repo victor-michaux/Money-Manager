@@ -41913,7 +41913,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h4', [_vm._v(_vm._s(_vm.title))])]), _vm._v(" "), _c('div', {
     staticClass: "card-block"
   }, [_c('p', [_vm._v("Total = " + _vm._s(_vm.total))]), _vm._v(" "), _c('table', {
-    staticClass: "table table-striped",
+    staticClass: "table table-striped table-responsive",
     on: {
       "click": _vm.total
     }

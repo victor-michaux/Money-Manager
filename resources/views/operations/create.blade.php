@@ -12,7 +12,7 @@
     <div id="app" class="container-fluid">
         <div class="row align-items-center">
             <div class="col col-md-6 offset-md-3">
-                <operation-form></operation-form>
+                <operation-form type={{ $type->id }} name={{ $type->name }}></operation-form>
             </div>
         </div>
     </div>

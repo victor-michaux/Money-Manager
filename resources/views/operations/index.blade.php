@@ -13,16 +13,19 @@
         <div class="container">
             <div class="row">
                 <div class="text-center col">
-                    <a href="{{ route('create-operation') }}" id="addExpense" class="btn btn-block btn-lg btn-primary">Add Expense</a>
+                    <a href="{{ route('create-operation', ['type'   =>  2]) }}" id="addExpense" class="btn btn-block btn-lg btn-primary">Add Expense</a>
                 </div>
                 <div class="text-center col">
-                    <a href="{{ route('create-operation') }}" id="addIncome" class="btn btn-block btn-lg btn-primary">Add Income</a>
+                    <a href="{{ route('create-operation', ['type'   =>  1]) }}" id="addIncome" class="btn btn-block btn-lg btn-primary">Add Income</a>
+                </div>
+                <div class="text-center col">
+                    <a href="{{ route('create-operation', ['type'   =>  3]) }}" id="addPrevision" class="btn btn-block btn-lg btn-primary">Add Prevision</a>
                 </div>
             </div>
 
 
             <tabs>
-                <tab name="all" :selected="true">
+                <tab name="All" :selected="true">
                     <div class="row">
                         <div class="col">
                             <operations-list title="My Operation" list-type="all" v-bind:operations="operations"></operations-list>
@@ -30,7 +33,7 @@
                     </div>
                 </tab>
 
-                <tab name="separated">
+                <tab name="Separated">
                     <div class="row">
                         <div class="col-md-6">
                             <operations-list title="Expenses" list-type="expense" v-bind:operations="operations"></operations-list>

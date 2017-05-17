@@ -5,7 +5,7 @@
         </div>
         <div class="card-block">
             <p>Total = {{ total }}</p>
-            <table class="table table-striped" @click="total">
+            <table class="table table-striped table-responsive" @click="total">
                 <thead>
                 <tr>
                     <th>Title</th>
