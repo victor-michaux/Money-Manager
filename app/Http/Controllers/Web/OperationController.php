@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\OperationType;
+use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
 class OperationController extends Controller
 {
@@ -11,8 +14,12 @@ class OperationController extends Controller
         return view('operations.index');
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return view('operations.create');
+        $type = OperationType::find($request->type);
+        if($type === null) {
+            $type = OperationType::find(2);
+        }
+        return view('operations.create')->with(['type'   => $type]);
     }
 }

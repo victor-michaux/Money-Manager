@@ -13,52 +13,34 @@
         <div class="container">
             <div class="row">
                 <div class="text-center col">
-                    <a href="{{ route('create-operation') }}" id="addExpense" class="btn btn-block btn-lg btn-primary">Add Expense</a>
+                    <a href="{{ route('create-operation', ['type'   =>  2]) }}" id="addExpense" class="btn btn-block btn-lg btn-primary">Add Expense</a>
                 </div>
                 <div class="text-center col">
-                    <a href="{{ route('create-operation') }}" id="addIncome" class="btn btn-block btn-lg btn-primary">Add Income</a>
+                    <a href="{{ route('create-operation', ['type'   =>  1]) }}" id="addIncome" class="btn btn-block btn-lg btn-primary">Add Income</a>
+                </div>
+                <div class="text-center col">
+                    <a href="{{ route('create-operation', ['type'   =>  3]) }}" id="addPrevision" class="btn btn-block btn-lg btn-primary">Add Prevision</a>
                 </div>
             </div>
 
 
             <tabs>
-                <tab name="all" :selected="true">
+                <tab name="All" :selected="true">
                     <div class="row">
                         <div class="col">
-                            <div class="card">
-                                <div class="card-header text-center">
-                                    <h4>My operations</h4>
-                                </div>
-                                <div class="card-block">
-                                    <operations-list list-type="all" v-bind:operations="operations"></operations-list>
-                                </div>
-                            </div>
+                            <operations-list title="My Operation" list-type="all" v-bind:operations="operations"></operations-list>
                         </div>
                     </div>
                 </tab>
 
-                <tab name="separated">
+                <tab name="Separated">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-header text-center">
-                                    <h4>Expenses</h4>
-                                </div>
-                                <div class="card-block">
-                                    <operations-list list-type="expense" v-bind:operations="operations"></operations-list>
-                                </div>
-                            </div>
+                            <operations-list title="Expenses" list-type="expense" v-bind:operations="operations"></operations-list>
                         </div>
 
                         <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-header text-center">
-                                    <h4>Incomes</h4>
-                                </div>
-                                <div class="card-block">
-                                    <operations-list list-type="income" v-bind:operations="operations"></operations-list>
-                                </div>
-                            </div>
+                            <operations-list title="Incomes" list-type="income" v-bind:operations="operations"></operations-list>
                         </div>
                     </div>
 

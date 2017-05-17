@@ -1,25 +1,30 @@
 <template>
-    <div>
-        <p>Total = {{ total }}</p>
-        <table class="table table-striped" @click="total">
-            <thead>
-            <tr>
-                <th>Title</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th>Category</th>
-            </tr>
-            </thead>
-            <tbody>
-            <operation-item v-if="display(operation)" v-for="operation in operations" :key="operation.id" v-bind:operation="operation"></operation-item>
-            </tbody>
-        </table>
+    <div class="card">
+        <div class="card-header text-center">
+            <h4>{{ title }}</h4>
+        </div>
+        <div class="card-block">
+            <p>Total = {{ total }}</p>
+            <table class="table table-striped table-responsive" @click="total">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Category</th>
+                </tr>
+                </thead>
+                <tbody>
+                <operation-item v-if="display(operation)" v-for="operation in operations" :key="operation.id" v-bind:operation="operation"></operation-item>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['operations', 'listType'],
+        props: ['operations', 'listType', 'title'],
         methods: {
             display: function (operation) {
                 return operation.type === this.listType || this.listType === "all"

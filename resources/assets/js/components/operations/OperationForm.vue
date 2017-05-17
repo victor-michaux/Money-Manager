@@ -1,20 +1,10 @@
 <template>
     <div id="operation-form" class="card">
-        <div class="card-header text-center">
-            <h4>Operation</h4>
+        <div class="card-header text-center" v-bind:class="name">
+            <h4>New {{ name }}</h4>
         </div>
         <div class="card-block">
             <div id="form-operation">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="type" id="income" v-model="type" value=1> Income
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="type" id="expense" v-model="type" value=2> Expense
-                    </label>
-                </div>
                 <div class="form-group row">
                     <label for="title" class="col-4 col-sm-4 col-lg-3 col-xl-2 col-form-label">Title</label>
                     <div class="col">
@@ -35,11 +25,14 @@
                 </div>
                 <div class="form-group row">
                     <label for="category" class="col-4 col-sm-4 col-lg-3 col-xl-2 col-form-label">Category</label>
-                    <select class="form-control" id="category" v-model="category">
-                        <option v-for="category in categories" v-bind:value="category.id" class="form-control col">{{ category.name }}</option>
-                    </select>
+                    <div class="col">
+                        <select class="form-control" id="category" v-model="category">
+                            <option v-for="category in categories" v-bind:value="category.id" class="form-control col">{{ category.name }}</option>
+                        </select>
+                    </div>
+
                 </div>
-                <div class="text-center"><div @click="storeOperation" id="submit-button" class="btn btn-block btn-lg btn-primary">Add Operation</div></div>
+                <div class="text-center"><div @click="storeOperation" id="submit-button" class="btn btn-block btn-lg btn-primary">Add {{ name }}</div></div>
             </div>
         </div>
     </div>
@@ -47,12 +40,15 @@
 
 <script>
     export default {
+        props: {
+            type: { required: true},
+            name: { required: true}
+        },
         data: function () {
             return {
                 title: "",
                 date: new Date().toLocaleDateString(),
                 amount: 0,
-                type: 1,
                 category: 1,
                 categories: []
             }

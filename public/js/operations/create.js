@@ -41435,21 +41435,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        type: { required: true },
+        name: { required: true }
+    },
     data: function data() {
         return {
             title: "",
             date: new Date().toLocaleDateString(),
             amount: 0,
-            type: 1,
             category: 1,
             categories: []
         };
@@ -41527,65 +41523,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "operation-form"
     }
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_c('div', {
+    staticClass: "card-header text-center",
+    class: _vm.name
+  }, [_c('h4', [_vm._v("New " + _vm._s(_vm.name))])]), _vm._v(" "), _c('div', {
     staticClass: "card-block"
   }, [_c('div', {
     attrs: {
       "id": "form-operation"
     }
   }, [_c('div', {
-    staticClass: "form-check form-check-inline"
-  }, [_c('label', {
-    staticClass: "form-check-label"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.type),
-      expression: "type"
-    }],
-    staticClass: "form-check-input",
-    attrs: {
-      "type": "radio",
-      "name": "type",
-      "id": "income",
-      "value": "1"
-    },
-    domProps: {
-      "checked": _vm._q(_vm.type, "1")
-    },
-    on: {
-      "__c": function($event) {
-        _vm.type = "1"
-      }
-    }
-  }), _vm._v(" Income\n                ")])]), _vm._v(" "), _c('div', {
-    staticClass: "form-check form-check-inline"
-  }, [_c('label', {
-    staticClass: "form-check-label"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.type),
-      expression: "type"
-    }],
-    staticClass: "form-check-input",
-    attrs: {
-      "type": "radio",
-      "name": "type",
-      "id": "expense",
-      "value": "2"
-    },
-    domProps: {
-      "checked": _vm._q(_vm.type, "2")
-    },
-    on: {
-      "__c": function($event) {
-        _vm.type = "2"
-      }
-    }
-  }), _vm._v(" Expense\n                ")])]), _vm._v(" "), _c('div', {
     staticClass: "form-group row"
   }, [_c('label', {
     staticClass: "col-4 col-sm-4 col-lg-3 col-xl-2 col-form-label",
@@ -41692,7 +41639,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "for": "category"
     }
-  }, [_vm._v("Category")]), _vm._v(" "), _c('select', {
+  }, [_vm._v("Category")]), _vm._v(" "), _c('div', {
+    staticClass: "col"
+  }, [_c('select', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -41721,7 +41670,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": category.id
       }
     }, [_vm._v(_vm._s(category.name))])
-  }))]), _vm._v(" "), _c('div', {
+  }))])]), _vm._v(" "), _c('div', {
     staticClass: "text-center"
   }, [_c('div', {
     staticClass: "btn btn-block btn-lg btn-primary",
@@ -41731,12 +41680,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.storeOperation
     }
-  }, [_vm._v("Add Operation")])])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "card-header text-center"
-  }, [_c('h4', [_vm._v("Operation")])])
-}]}
+  }, [_vm._v("Add " + _vm._s(_vm.name))])])])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
