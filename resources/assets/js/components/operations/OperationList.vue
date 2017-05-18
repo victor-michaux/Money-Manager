@@ -5,7 +5,11 @@
         </div>
         <div class="card-block">
             <p>Total = {{ total }}</p>
-            <table class="table table-striped table-responsive" @click="total">
+            <div v-show="displayProgress" class="progress">
+                <div class="progress-bar income" role="progressbar" v-bind:style="{ width: progressIncome }" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar expense" role="progressbar" v-bind:style="{ width: progressExpense }" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <table class="table" @click="total">
                 <thead>
                 <tr>
                     <th>Title</th>
@@ -24,7 +28,7 @@
 
 <script>
     export default {
-        props: ['operations', 'listType', 'title'],
+        props: ['operations', 'listType', 'title', 'displayProgress'],
         methods: {
             display: function (operation) {
                 return operation.type === this.listType || this.listType === "all"
@@ -49,6 +53,24 @@
                     total += (child.operation.type === "expense" ? (amount * -1) : (amount * 1));
                 });
                 return total;
+            },
+            progressIncome: function () {
+                let nb = 0;
+                this.displayedOperations.forEach(function (child) {
+                    if(child.operation.type === "income") {
+                        nb++;
+                    }
+                });
+                return (nb / this.displayedOperations.length) * 100 + "%";
+            },
+            progressExpense: function () {
+                let nb = 0;
+                this.displayedOperations.forEach(function (child) {
+                    if(child.operation.type === "expense") {
+                        nb++;
+                    }
+                });
+                return (nb / this.displayedOperations.length) * 100 + "%";
             }
         },
         data: function () {

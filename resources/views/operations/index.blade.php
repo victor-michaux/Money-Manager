@@ -28,7 +28,7 @@
                 <tab name="All" :selected="true">
                     <div class="row">
                         <div class="col">
-                            <operations-list title="My Operation" list-type="all" v-bind:operations="operations"></operations-list>
+                            <operations-list title="My Operations" list-type="all" v-bind:operations="operations" display-progress=true></operations-list>
                         </div>
                     </div>
                 </tab>

@@ -41603,9 +41603,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['operations', 'listType', 'title'],
+    props: ['operations', 'listType', 'title', 'displayProgress'],
     methods: {
         display: function display(operation) {
             return operation.type === this.listType || this.listType === "all";
@@ -41628,6 +41632,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 total += child.operation.type === "expense" ? amount * -1 : amount * 1;
             });
             return total;
+        },
+        progressIncome: function progressIncome() {
+            var nb = 0;
+            this.displayedOperations.forEach(function (child) {
+                if (child.operation.type === "income") {
+                    nb++;
+                }
+            });
+            return nb / this.displayedOperations.length * 100 + "%";
+        },
+        progressExpense: function progressExpense() {
+            var nb = 0;
+            this.displayedOperations.forEach(function (child) {
+                if (child.operation.type === "expense") {
+                    nb++;
+                }
+            });
+            return nb / this.displayedOperations.length * 100 + "%";
         }
     },
     data: function data() {
@@ -41912,8 +41934,38 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-header text-center"
   }, [_c('h4', [_vm._v(_vm._s(_vm.title))])]), _vm._v(" "), _c('div', {
     staticClass: "card-block"
-  }, [_c('p', [_vm._v("Total = " + _vm._s(_vm.total))]), _vm._v(" "), _c('table', {
-    staticClass: "table table-striped table-responsive",
+  }, [_c('p', [_vm._v("Total = " + _vm._s(_vm.total))]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.displayProgress),
+      expression: "displayProgress"
+    }],
+    staticClass: "progress"
+  }, [_c('div', {
+    staticClass: "progress-bar income",
+    style: ({
+      width: _vm.progressIncome
+    }),
+    attrs: {
+      "role": "progressbar",
+      "aria-valuenow": "15",
+      "aria-valuemin": "0",
+      "aria-valuemax": "100"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "progress-bar expense",
+    style: ({
+      width: _vm.progressExpense
+    }),
+    attrs: {
+      "role": "progressbar",
+      "aria-valuenow": "30",
+      "aria-valuemin": "0",
+      "aria-valuemax": "100"
+    }
+  })]), _vm._v(" "), _c('table', {
+    staticClass: "table",
     on: {
       "click": _vm.total
     }
@@ -41942,7 +41994,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('tr', {
-    class: _vm.cssStyle
+    class: _vm.operation.type
   }, [_c('td', [_vm._v(_vm._s(_vm.operation.title))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.operation.amount))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.readableDate))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.operation.category))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
