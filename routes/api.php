@@ -10,6 +10,7 @@ Route::post('/register', 'RegisterController@register');
 
 Route::group(['prefix'  =>  'operations'], function () {
     Route::get('/', 'API\OperationController@index')->middleware('auth:api');
+    Route::get('/date/{year}/{month}', 'API\OperationController@showPerMonth')->middleware('auth:api');
     Route::post('/', 'API\OperationController@store')->middleware('auth:api');
 });
 

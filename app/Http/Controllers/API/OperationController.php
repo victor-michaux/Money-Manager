@@ -9,6 +9,7 @@ use App\Operation;
 use App\OperationType;
 use App\Transformers\OperationTransformer;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 
 class OperationController extends Controller
@@ -16,6 +17,29 @@ class OperationController extends Controller
     public function index()
     {
         $operations = Operation::where('user_id', Auth::user()->id)->latestFirst()->get();
+
+        return fractal()
+            ->collection($operations)
+            ->transformWith(new OperationTransformer())
+            ->toArray();
+    }
+
+    public function showPerMonth(int $year, int $month)
+    {
+        if($month > 12 || $month < 1 ) {
+            $operations = new Collection();
+        } else {
+            $currentMonth = Carbon::create($year, $month, 1, 0, 0, 0);
+            $nextMonth = $currentMonth;
+
+            $currentMonth = $currentMonth->toDateString();
+            $nextMonth = $nextMonth->addMonth()->toDateString();
+            $operations = Operation::where([
+                ['user_id', '=', Auth::user()->id],
+                ['date', '>=', $currentMonth],
+                ['date', '<', $nextMonth],
+            ])->get();
+        }
 
         return fractal()
             ->collection($operations)
