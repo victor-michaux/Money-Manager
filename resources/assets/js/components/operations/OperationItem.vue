@@ -1,5 +1,5 @@
 <template>
-    <tr v-bind:class="cssStyle">
+    <tr v-bind:class="operation.type">
         <td>{{ operation.title }}</td>
         <td>{{ operation.amount }}</td>
         <td>{{ readableDate }}</td>
