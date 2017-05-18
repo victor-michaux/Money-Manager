@@ -23,6 +23,29 @@ class OperationController extends Controller
             ->toArray();
     }
 
+    public function showPerMonth(int $year, int $month)
+    {
+        if($month > 12 ) {
+            $operations = new Collection();
+        } else {
+            $currentMonth = Carbon::create($year, $month, 1, 0, 0, 0);
+            $nextMonth = $currentMonth;
+
+            $currentMonth = $currentMonth->toDateString();
+            $nextMonth = $nextMonth->addMonth()->toDateString();
+            $operations = Operation::where([
+                ['user_id', '=', Auth::user()->id],
+                ['date', '>=', $currentMonth],
+                ['date', '<', $nextMonth],
+            ])->get();
+        }
+
+        return fractal()
+            ->collection($operations)
+            ->transformWith(new OperationTransformer())
+            ->toArray();
+    }
+
     public function store(StoreOperationRequest $request)
     {
         $operation = new Operation();
