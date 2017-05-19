@@ -31,6 +31,7 @@
         props: ['operations', 'listType', 'title', 'displayProgress'],
         methods: {
             display: function (operation) {
+                if(operation.type === "prevision") return false;
                 return operation.type === this.listType || this.listType === "all"
             },
             operationsSortedByDate: function() {

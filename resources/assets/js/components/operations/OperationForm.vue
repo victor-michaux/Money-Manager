@@ -32,7 +32,7 @@
                     </div>
 
                 </div>
-                <div class="text-center"><div @click="storeOperation" id="submit-button" class="btn btn-block btn-lg btn-primary">Add {{ name }}</div></div>
+                <div class="text-center"><div @click="selectGoodStorage" id="submit-button" class="btn btn-block btn-lg btn-primary">Add {{ name }}</div></div>
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
         },
         methods: {
             storeOperation: function () {
-                axios.post('http://concordia.app:8000/api/operations', {
+                axios.post('/api/operations', {
                     title: this.title,
                     date: this.date,
                     amount: this.amount,
@@ -64,11 +64,28 @@
                 }).then(function (response) {
                     window.location.replace("/operations");
                 });
+            },
+            storePrevisionOperation: function() {
+                axios.post('/api/prevision_operations', {
+                    title: this.title,
+                    date: this.date,
+                    amount: this.amount,
+                    category: this.category
+                }).then(function (response) {
+                    window.location.replace("/operations");
+                });
+            },
+            selectGoodStorage: function() {
+                if(this.type != 3) {
+                    this.storeOperation();
+                } else {
+                    this.storePrevisionOperation();
+                }
             }
         },
         created() {
             var self = this;
-            axios.get('http://concordia.app:8000/api/categories').then(function (response) {
+            axios.get('/api/categories').then(function (response) {
                 self.categories = response.data.data;
             });
         }

@@ -22,10 +22,18 @@
 }
 
 .expense {
-    background-color: #cb2d3e;
+     background-color: #cb2d3e;
+     color: #fff;
+ }
+.expense h4 {
+    color: inherit;
+}
+
+.prevision {
+    background-color: #2F80ED;
     color: #fff;
 }
-.expense h4 {
+.prevision h4 {
     color: inherit;
 }
 

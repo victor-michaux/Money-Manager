@@ -41452,7 +41452,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         storeOperation: function storeOperation() {
-            axios.post('http://concordia.app:8000/api/operations', {
+            axios.post('/api/operations', {
                 title: this.title,
                 date: this.date,
                 amount: this.amount,
@@ -41461,11 +41461,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function (response) {
                 window.location.replace("/operations");
             });
+        },
+        storePrevisionOperation: function storePrevisionOperation() {
+            axios.post('/api/prevision_operations', {
+                title: this.title,
+                date: this.date,
+                amount: this.amount,
+                category: this.category
+            }).then(function (response) {
+                window.location.replace("/operations");
+            });
+        },
+        selectGoodStorage: function selectGoodStorage() {
+            if (this.type != 3) {
+                this.storeOperation();
+            } else {
+                this.storePrevisionOperation();
+            }
         }
     },
     created: function created() {
         var self = this;
-        axios.get('http://concordia.app:8000/api/categories').then(function (response) {
+        axios.get('/api/categories').then(function (response) {
             self.categories = response.data.data;
         });
     }
@@ -41678,7 +41695,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "submit-button"
     },
     on: {
-      "click": _vm.storeOperation
+      "click": _vm.selectGoodStorage
     }
   }, [_vm._v("Add " + _vm._s(_vm.name))])])])])])
 },staticRenderFns: []}
