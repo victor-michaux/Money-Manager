@@ -41612,6 +41612,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['operations', 'listType', 'title', 'displayProgress'],
     methods: {
         display: function display(operation) {
+            if (operation.type === "prevision") return false;
             return operation.type === this.listType || this.listType === "all";
         },
         operationsSortedByDate: function operationsSortedByDate() {

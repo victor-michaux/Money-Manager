@@ -32,7 +32,7 @@
                     </div>
 
                 </div>
-                <div class="text-center"><div @click="storeOperation" id="submit-button" class="btn btn-block btn-lg btn-primary">Add {{ name }}</div></div>
+                <div class="text-center"><div @click="selectGoodStorage" id="submit-button" class="btn btn-block btn-lg btn-primary">Add {{ name }}</div></div>
             </div>
         </div>
     </div>
@@ -64,6 +64,23 @@
                 }).then(function (response) {
                     window.location.replace("/operations");
                 });
+            },
+            storePrevisionOperation: function() {
+                axios.post('/api/prevision_operations', {
+                    title: this.title,
+                    date: this.date,
+                    amount: this.amount,
+                    category: this.category
+                }).then(function (response) {
+                    window.location.replace("/operations");
+                });
+            },
+            selectGoodStorage: function() {
+                if(this.type != 3) {
+                    this.storeOperation();
+                } else {
+                    this.storePrevisionOperation();
+                }
             }
         },
         created() {
