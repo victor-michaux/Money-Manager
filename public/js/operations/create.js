@@ -41452,7 +41452,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         storeOperation: function storeOperation() {
-            axios.post('http://concordia.app:8000/api/operations', {
+            axios.post('/api/operations', {
                 title: this.title,
                 date: this.date,
                 amount: this.amount,
@@ -41465,7 +41465,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     created: function created() {
         var self = this;
-        axios.get('http://concordia.app:8000/api/categories').then(function (response) {
+        axios.get('/api/categories').then(function (response) {
             self.categories = response.data.data;
         });
     }
