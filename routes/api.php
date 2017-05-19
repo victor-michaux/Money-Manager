@@ -6,8 +6,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/register', 'RegisterController@register');
-
 Route::group(['prefix'  =>  'operations'], function () {
     Route::get('/', 'API\OperationController@index')->middleware('auth:api');
     Route::get('/date/{year}/{month}', 'API\OperationController@showPerMonth')->middleware('auth:api');
@@ -16,4 +14,8 @@ Route::group(['prefix'  =>  'operations'], function () {
 
 Route::group(['prefix'  =>  'categories', 'namespace'   =>  'API'], function() {
    Route::get('/', 'CategoryController@index')->middleware('auth:api');
+});
+
+Route::group(['prefix'  =>  'prevision_operations'], function() {
+    Route::post('/', 'API\PrevisionOperationController@store')->middleware('auth:api');
 });
