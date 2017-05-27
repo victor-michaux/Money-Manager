@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\EmailConfirmationToken;
 use App\Mail\UserRegistered;
 use App\User;
 use App\Http\Controllers\Controller;
@@ -70,7 +71,12 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        Mail::to($user)->send(new UserRegistered($user));
+        $emailToken = new EmailConfirmationToken();
+        $emailToken->user()->associate($user);
+        $emailToken->token = str_random(255);
+        $emailToken->save();
+
+        Mail::to($user)->send(new UserRegistered($user, $emailToken));
 
         return $user;
     }

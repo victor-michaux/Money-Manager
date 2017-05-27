@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\EmailConfirmationToken;
 use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -13,6 +14,7 @@ class UserRegistered extends Mailable
     use Queueable, SerializesModels;
 
     public $user;
+    public $confirmationUrl;
 
     /**
      * Create a new message instance.
@@ -20,9 +22,10 @@ class UserRegistered extends Mailable
      * @internal param User $user
      * @param User $user
      */
-    public function __construct(User $user)
+    public function __construct(User $user, EmailConfirmationToken $emailConfirmationToken)
     {
         $this->user = $user;
+        $this->confirmationUrl = $this->generateUrl($user, $emailConfirmationToken);
     }
 
     /**
@@ -34,5 +37,12 @@ class UserRegistered extends Mailable
     {
         return $this->from('hello@money.com')
             ->view('mails.user_registered');
+    }
+
+    private function generateUrl(User $user, EmailConfirmationToken $emailConfirmationToken)
+    {
+        $userEmail = $user->email;
+        $token = $emailConfirmationToken->token;
+        return route('email_token_validation') . "?" . http_build_query(['email'    =>  $userEmail, 'token' =>  $token]);
     }
 }

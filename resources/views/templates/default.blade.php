@@ -18,6 +18,8 @@
 <body>
     @include('block.navbar')
 
+    @include('block.notification')
+
     @yield('content')
 
     @yield('js')

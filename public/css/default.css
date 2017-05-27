@@ -18,6 +18,18 @@ body {
     color: #464a4c;
 }
 
+.notification {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    box-shadow: 0   2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.notification.alert-success {
+    color: #ffffff;
+    background-color: #5dc385;
+    border-color: #5dc385;
+}
+
 @media only screen and (max-width: 320px) {
     body {
         font-size: 0.75em;
