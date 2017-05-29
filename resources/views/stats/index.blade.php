@@ -17,7 +17,7 @@
             <div class="col-sm-6 mx-auto">
               <div class="card">
                 <div class="card-block">
-                  <canvas id="pieChart" style="max-width:500px; max-height:500px;"></canvas>
+                  <canvas id="pieChart" style="max-width : 500px; max-height : 500px;"></canvas>
                 </div>
               </div>
             </div>
