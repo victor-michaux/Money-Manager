@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layouts.home');
+    return view('home');
 })->middleware('guest');
 
 Route::get('/features', function () {
@@ -23,6 +23,8 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Web', 'prefix'  =>  'opera
    Route::get('/', 'OperationController@dashboard')->name('dashboard');
    Route::get('/create', 'OperationController@create')->name('create-operation');
 });
+
+Route::get('/email_validation', 'Web\EmailConfirmationTokenController@check')->name('email_token_validation');
 
 Auth::routes();
 
