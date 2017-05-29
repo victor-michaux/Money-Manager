@@ -27,7 +27,7 @@ class OperationController extends Controller
     }
 
     public function amountPerCategory(){
-      $operations = Operation::select('category_id', DB::raw('SUM(amount) as sumAmount'))->groupBy('category_id')->get();
+      $operations = Operation::select('category_id', DB::raw('SUM(amount) as sumAmount'))->where('user_id', '=', Auth::user()->id)->groupBy('category_id')->get();
       foreach ($operations as $key => $operation) {
          $operation->category;
       }
