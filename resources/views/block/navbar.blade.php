@@ -16,7 +16,7 @@
                     <a class="nav-link current" href="{{ route('dashboard') }}">Operations <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Stats</a>
+                    <a class="nav-link" href="{{ route('stats') }}">Stats</a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
