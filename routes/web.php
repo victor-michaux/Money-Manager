@@ -26,6 +26,10 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Web', 'prefix'  =>  'opera
 
 Route::get('/email_validation', 'Web\EmailConfirmationTokenController@check')->name('email_token_validation');
 
+Route::get('/stats', 'Web\StatsController@dashboard')->name('stats')->middleware('auth');
+
+Route::get('/categories', 'API\OperationController@amountPerCategory')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

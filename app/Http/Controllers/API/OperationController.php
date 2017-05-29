@@ -8,9 +8,11 @@ use App\Http\Requests\StoreOperationRequest;
 use App\Operation;
 use App\OperationType;
 use App\Transformers\OperationTransformer;
+use App\Transformers\StatsTransformer;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OperationController extends Controller
 {
@@ -22,6 +24,14 @@ class OperationController extends Controller
             ->collection($operations)
             ->transformWith(new OperationTransformer())
             ->toArray();
+    }
+
+    public function amountPerCategory(){
+      $operations = Operation::select('category_id', DB::raw('SUM(amount) as sumAmount'))->groupBy('category_id')->get();
+      foreach ($operations as $key => $operation) {
+         $operation->category;
+      }
+      return $operations->toJson();
     }
 
     public function showPerMonth(int $year, int $month)

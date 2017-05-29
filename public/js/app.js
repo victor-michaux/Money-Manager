@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 55);
+/******/ 	return __webpack_require__(__webpack_require__.s = 59);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -41392,13 +41392,13 @@ window.Vue = __webpack_require__(32);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(43));
+Vue.component('example', __webpack_require__(45));
 
-Vue.component('tab', __webpack_require__(44));
-Vue.component('tabs', __webpack_require__(45));
+Vue.component('tab', __webpack_require__(46));
+Vue.component('tabs', __webpack_require__(47));
 
-Vue.component('operation-item', __webpack_require__(47));
-Vue.component('operations-list', __webpack_require__(48));
+Vue.component('operation-item', __webpack_require__(49));
+Vue.component('operations-list', __webpack_require__(50));
 
 var app = new Vue({
     el: '#app',
@@ -41418,13 +41418,14 @@ var app = new Vue({
 
 /***/ }),
 /* 35 */,
-/* 36 */
+/* 36 */,
+/* 37 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41457,7 +41458,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41487,7 +41488,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41534,8 +41535,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 40 */,
-/* 41 */
+/* 41 */,
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41574,7 +41575,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41664,20 +41665,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 43 */
+/* 44 */,
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(37),
+  __webpack_require__(38),
   /* template */
-  __webpack_require__(49),
+  __webpack_require__(56),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/vagrant/sites/concordia/resources/assets/js/components/Example.vue"
+Component.options.__file = "/home/vagrant/web/Money-Manager/resources/assets/js/components/Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41688,9 +41690,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-172c2b8c", Component.options)
+    hotAPI.createRecord("data-v-60244012", Component.options)
   } else {
-    hotAPI.reload("data-v-172c2b8c", Component.options)
+    hotAPI.reload("data-v-60244012", Component.options)
   }
 })()}
 
@@ -41698,20 +41700,20 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(38),
+  __webpack_require__(39),
   /* template */
-  __webpack_require__(52),
+  __webpack_require__(54),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/vagrant/sites/concordia/resources/assets/js/components/general/Tab.vue"
+Component.options.__file = "/home/vagrant/web/Money-Manager/resources/assets/js/components/general/Tab.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Tab.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41722,9 +41724,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7ef7ecbe", Component.options)
+    hotAPI.createRecord("data-v-37639696", Component.options)
   } else {
-    hotAPI.reload("data-v-7ef7ecbe", Component.options)
+    hotAPI.reload("data-v-37639696", Component.options)
   }
 })()}
 
@@ -41732,20 +41734,20 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(39),
+  __webpack_require__(40),
   /* template */
-  __webpack_require__(51),
+  __webpack_require__(57),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/vagrant/sites/concordia/resources/assets/js/components/general/Tabs.vue"
+Component.options.__file = "/home/vagrant/web/Money-Manager/resources/assets/js/components/general/Tabs.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Tabs.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41756,9 +41758,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-63b14c25", Component.options)
+    hotAPI.createRecord("data-v-8e8a4566", Component.options)
   } else {
-    hotAPI.reload("data-v-63b14c25", Component.options)
+    hotAPI.reload("data-v-8e8a4566", Component.options)
   }
 })()}
 
@@ -41766,21 +41768,21 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 46 */,
-/* 47 */
+/* 48 */,
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(41),
+  __webpack_require__(42),
   /* template */
-  __webpack_require__(54),
+  __webpack_require__(52),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/vagrant/sites/concordia/resources/assets/js/components/operations/OperationItem.vue"
+Component.options.__file = "/home/vagrant/web/Money-Manager/resources/assets/js/components/operations/OperationItem.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] OperationItem.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41791,9 +41793,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-fcf9c252", Component.options)
+    hotAPI.createRecord("data-v-0c3433ff", Component.options)
   } else {
-    hotAPI.reload("data-v-fcf9c252", Component.options)
+    hotAPI.reload("data-v-0c3433ff", Component.options)
   }
 })()}
 
@@ -41801,12 +41803,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(42),
+  __webpack_require__(43),
   /* template */
   __webpack_require__(53),
   /* scopeId */
@@ -41814,7 +41816,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/vagrant/sites/concordia/resources/assets/js/components/operations/OperationList.vue"
+Component.options.__file = "/home/vagrant/web/Money-Manager/resources/assets/js/components/operations/OperationList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] OperationList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41825,9 +41827,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-e8eed23c", Component.options)
+    hotAPI.createRecord("data-v-1639ac0a", Component.options)
   } else {
-    hotAPI.reload("data-v-e8eed23c", Component.options)
+    hotAPI.reload("data-v-1639ac0a", Component.options)
   }
 })()}
 
@@ -41835,92 +41837,20 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 49 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Example Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-172c2b8c", module.exports)
-  }
-}
-
-/***/ }),
-/* 50 */,
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-sm-12"
-  }, [_c('div', {
-    staticClass: "card",
-    attrs: {
-      "id": "displaySelection"
-    }
-  }, [_c('nav', {
-    staticClass: "nav nav-pills justify-content-center"
-  }, _vm._l((_vm.tabs), function(tab) {
-    return _c('div', {
-      staticClass: "nav-link",
-      class: {
-        'active': tab.isActive
-      },
-      on: {
-        "click": function($event) {
-          _vm.selectTab(tab)
-        }
-      }
-    }, [_vm._v(_vm._s(tab.name))])
-  }))])])]), _vm._v(" "), _c('div', [_vm._t("default")], 2)])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-63b14c25", module.exports)
-  }
-}
-
-/***/ }),
+/* 51 */,
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.isActive),
-      expression: "isActive"
-    }]
-  }, [_vm._t("default")], 2)
+  return _c('tr', {
+    class: _vm.operation.type
+  }, [_c('td', [_vm._v(_vm._s(_vm.operation.title))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.operation.amount))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.readableDate))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.operation.category))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7ef7ecbe", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-0c3433ff", module.exports)
   }
 }
 
@@ -41985,7 +41915,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-e8eed23c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-1639ac0a", module.exports)
   }
 }
 
@@ -41994,24 +41924,98 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('tr', {
-    class: _vm.operation.type
-  }, [_c('td', [_vm._v(_vm._s(_vm.operation.title))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.operation.amount))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.readableDate))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.operation.category))])])
+  return _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.isActive),
+      expression: "isActive"
+    }]
+  }, [_vm._t("default")], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-fcf9c252", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-37639696", module.exports)
   }
 }
 
 /***/ }),
-/* 55 */
+/* 55 */,
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-8 col-md-offset-2"
+  }, [_c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("Example Component")]), _vm._v(" "), _c('div', {
+    staticClass: "panel-body"
+  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-60244012", module.exports)
+  }
+}
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-12"
+  }, [_c('div', {
+    staticClass: "card",
+    attrs: {
+      "id": "displaySelection"
+    }
+  }, [_c('nav', {
+    staticClass: "nav nav-pills justify-content-center"
+  }, _vm._l((_vm.tabs), function(tab) {
+    return _c('div', {
+      staticClass: "nav-link",
+      class: {
+        'active': tab.isActive
+      },
+      on: {
+        "click": function($event) {
+          _vm.selectTab(tab)
+        }
+      }
+    }, [_vm._v(_vm._s(tab.name))])
+  }))])])]), _vm._v(" "), _c('div', [_vm._t("default")], 2)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-8e8a4566", module.exports)
+  }
+}
+
+/***/ }),
+/* 58 */,
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(34);
-module.exports = __webpack_require__(36);
+module.exports = __webpack_require__(37);
 
 
 /***/ })
