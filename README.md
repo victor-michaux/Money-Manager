@@ -51,4 +51,6 @@ VALUES
   
   API installation: ```php artisan passport:install```
   
-  **You're now ready to run the application :)**
+  **To run the app, just type:** ```php artisan serve```
+  
+  **Enjoy :)**
